@@ -1,0 +1,12 @@
+{
+  "name": "desafio_ada_fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Diego Ribeiro Martins",
+    "email": "diegoribeiromartins@gmail.com",
+    "url": "https://github.com/diegoribeiromartins"
+  },
+  "license": "no-license",
+  "workspaces": []
+}
