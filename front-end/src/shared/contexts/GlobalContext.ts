@@ -1,5 +1,15 @@
 import { createContext } from "react";
+import { CardEntity, UserEntity } from "../../services";
 
-interface GlobalContextType {}
+interface GlobalContextType {
+  globalLoading: boolean;
+  toggleGlobalLoading: () => void;
 
-export const GlobalContext = createContext<GlobalContextType>({});
+  user: UserEntity | null;
+  setUser: (user: UserEntity) => void;
+
+  cards: CardEntity[] | null;
+  setCards: (cards: CardEntity[]) => void;
+}
+
+export const GlobalContext = createContext<Partial<GlobalContextType>>({});

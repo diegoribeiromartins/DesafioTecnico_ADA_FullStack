@@ -1,9 +1,30 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { GlobalContext } from "../contexts";
 import { ChildrenProp } from "../types";
+import { UserEntity } from "../../services";
+import { CardEntity } from "../../services/card";
 
 const GlobalContextProvider: FC<ChildrenProp> = ({ children }) => {
-  return <GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>;
+  const [globalLoading, setGlobalLoading] = useState<boolean>(false);
+  const [user, setUser] = useState<UserEntity | null>(null);
+  const [cards, setCards] = useState<CardEntity[] | null>(null);
+
+  return (
+    <GlobalContext.Provider
+      value={{
+        globalLoading,
+        toggleGlobalLoading: () => setGlobalLoading(!globalLoading),
+
+        user,
+        setUser,
+
+        cards,
+        setCards,
+      }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
 };
 
 export default GlobalContextProvider;
