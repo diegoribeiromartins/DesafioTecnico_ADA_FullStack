@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import { AuthRoutes, CardRoutes } from "./app/routes";
+import { AuthGuardMiddleware } from "./app/middlewares";
 
 const app: Application = express();
 
@@ -11,6 +12,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use(AuthRoutes);
-app.use("/cards", CardRoutes);
+app.use("/cards", [AuthGuardMiddleware], CardRoutes);
 
 export default app;
