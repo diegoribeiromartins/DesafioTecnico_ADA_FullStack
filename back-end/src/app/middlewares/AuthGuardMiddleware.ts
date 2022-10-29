@@ -8,7 +8,9 @@ export const AuthGuardMiddleware = async (
 ) => {
   try {
     const token =
-      (req.headers?.authorization as string).replace("Bearer", "").trim() || "";
+      ((req.headers?.authentication as string) || "")
+        .replace("Bearer", "")
+        .trim() || "";
     const hasAccess = await AuthController.verifyToken(token);
 
     if (!hasAccess) throw { status: 401, message: "Unauthorized" };
