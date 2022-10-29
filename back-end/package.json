@@ -4,8 +4,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
-    "build": "rm -r dist && npx tsc",
-    "start": "node dist/app.js"
+    "build": "npx tsc",
+    "start": "node dist/server.js"
+  },
+  "engines": {
+    "node": "16.18.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

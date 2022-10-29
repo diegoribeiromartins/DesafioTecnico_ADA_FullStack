@@ -29,8 +29,6 @@ class AuthController {
         throw { status: 404, message: "User not found" };
       }
 
-      console.log({ JWTSecret });
-
       return res.send({
         token: jwt.sign({ id: user.id }, JWTSecret),
       });
