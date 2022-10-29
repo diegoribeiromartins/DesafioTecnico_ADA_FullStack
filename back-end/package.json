@@ -1,5 +1,21 @@
 {
   "name": "@desafio_ada/back-end",
   "version": "1.0.0",
-  "license": "no-license"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
+    "build": "npx tsc",
+    "start": "rm -r dist && yarn build && yarn node dist/app.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@databases/sqlite": "^4.0.1",
+    "@types/express": "^4.17.14",
+    "express": "^4.18.2"
+  }
 }
