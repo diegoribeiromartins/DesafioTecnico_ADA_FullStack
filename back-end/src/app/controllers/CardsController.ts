@@ -71,7 +71,7 @@ class CardController {
         throw {};
       }
 
-      const card = await CardModel.show();
+      const card = await CardModel.show(id);
       if (card.length !== 1)
         throw {
           status: 404,
