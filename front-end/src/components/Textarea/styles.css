@@ -1,0 +1,16 @@
+.TextareaComponent__Textarea {
+  background: transparent;
+  border: none;
+  resize: vertical;
+  box-shadow: 0 0 2px 0 var(--accent);
+  border-radius: 4px;
+  padding: 0.8rem;
+  width: 100%;
+  display: block;
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.TextareaComponent__Textarea:is(:hover, :focus) {
+  background-color: rgba(255, 255, 255, 0.2);
+}

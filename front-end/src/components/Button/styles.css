@@ -1,0 +1,43 @@
+.Components__Btn {
+  position: relative;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--background);
+  color: var(--accent);
+  border: none;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.Components__Btn:is(:hover, :focus) {
+  box-shadow: 0 0 2px 0 var(--accent);
+}
+
+.Components__Btn:is(:disabled) {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.Components__Btn > svg {
+  margin-right: 0.5rem;
+}
+
+.Components__Btn__Icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+}
+
+.Components__Btn__Icon:is(:hover, :focus) {
+  background-color: var(--background);
+}
+
+.Components__Btn__Icon > svg {
+  margin-right: 0;
+}

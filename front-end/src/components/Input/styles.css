@@ -1,0 +1,15 @@
+.InputComponent__Input {
+  background: transparent;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  color: var(--accent);
+  box-shadow: 0 0 2px 0 var(--accent);
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.InputComponent__Input:is(:hover, :focus) {
+  background-color: rgba(255, 255, 255, 0.2);
+}

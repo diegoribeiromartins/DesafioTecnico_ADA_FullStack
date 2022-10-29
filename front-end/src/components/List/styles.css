@@ -1,0 +1,20 @@
+.ListComponent__Wrapper {
+  width: calc(100% / 3 - 0.5rem);
+  margin: 0.3rem 0;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 0 var(--accent);
+  overflow: hidden;
+}
+
+.ListComponent__Wrapper__Lista {
+  text-align: center;
+  font-weight: bold;
+  color: var(--secondary);
+  padding: 1rem;
+  box-shadow: 0px 2px 10px -8px var(--accent);
+  text-transform: uppercase;
+}
+
+.ListComponent__Wrapper__Items {
+  padding: 0.5rem;
+}

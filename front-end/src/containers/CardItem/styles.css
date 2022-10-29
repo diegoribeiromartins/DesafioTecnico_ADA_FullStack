@@ -1,0 +1,35 @@
+.CardItemContainer__Wrapper {
+  padding: 0.7rem;
+  margin-bottom: 0.35rem;
+  border-radius: 8px;
+}
+
+.CardItemContainer__Wrapper:is(:hover) {
+  box-shadow: 0 0 2px 0 var(--accent);
+  background-color: var(--background);
+}
+
+.CardItemContainer__Wrapper__Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.88rem;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+.CardItemContainer__Wrapper__Titulo {
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.CardItemContainer__Wrapper__Conteudo {
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.CardItemContainer__Wrapper__Options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
