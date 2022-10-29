@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import db from "../../db/conn";
+import { sql } from "@databases/sqlite";
 
 class CardController {
   get(req: Request, res: Response) {
@@ -15,10 +17,12 @@ class CardController {
     return res.send(`Card Route id: ${id}`);
   }
 
-  delete(req: Request, res: Response) {
-    const { id } = req.params;
+  async delete(req: Request, res: Response) {
+    const getAllUsersFromQuery = await db.query(sql`
+      SELECT * FROM users
+    `);
 
-    return res.send(`Card Route id: ${id}`);
+    return res.send(getAllUsersFromQuery);
   }
 }
 
