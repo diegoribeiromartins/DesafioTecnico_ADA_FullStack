@@ -16,7 +16,7 @@
     "prepare": "husky install",
     "back": "yarn workspace @desafio_ada/back-end",
     "front": "yarn workspace @desafio_ada/front-end",
-    "dev": "concurrently \"yarn back dev\" \"yarn front dev\""
+    "dev": "concurrently -n back,front \"yarn back dev\" \"yarn front dev\""
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
