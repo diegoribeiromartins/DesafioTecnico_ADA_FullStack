@@ -1,7 +1,10 @@
 import { FC } from "react";
+import { ChildrenProp } from "../../shared/types";
 
-const ButtonComponent: FC = () => {
-  return <div>ButtonComponent</div>;
+interface ButtonComponentProps extends ChildrenProp {}
+
+const ButtonComponent: FC<ButtonComponentProps> = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 export default ButtonComponent;
