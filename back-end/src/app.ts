@@ -11,6 +11,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use(AuthRoutes);
-app.use("/card", CardRoutes);
+app.use("/cards", CardRoutes);
 
 export default app;

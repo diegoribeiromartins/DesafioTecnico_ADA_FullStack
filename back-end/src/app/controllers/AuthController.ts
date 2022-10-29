@@ -1,8 +1,12 @@
 import { Request, Response } from "express";
+import UserModel from "../models/UserModel";
 
 class AuthController {
-  login(req: Request, res: Response) {
-    return res.send("Login Route");
+  async login(req: Request, res: Response) {
+    const { body } = req;
+    const users = await UserModel.get(body.login);
+
+    return res.send(users);
   }
 }
 

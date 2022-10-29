@@ -20,7 +20,15 @@ const initializeDatabase = async () => {
     INSERT INTO users (id, password)
     VALUES (${ADACredentials.id}, ${await ADACredentials.password})
   `);
+
+  await db.query(sql`
+  CREATE TABLE cards (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo VARCHAR NOT NULL,
+    conteudo VARCHAR NOT NULL,
+    lista VARCHAR NOT NULL
+  )`);
 };
 initializeDatabase();
 
-export default db;
+export { db };
