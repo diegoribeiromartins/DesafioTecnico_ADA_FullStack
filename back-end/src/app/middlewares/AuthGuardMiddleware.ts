@@ -11,7 +11,7 @@ export const AuthGuardMiddleware = async (
       (req.headers?.authorization as string).replace("Bearer", "").trim() || "";
     const hasAccess = await AuthController.verifyToken(token);
 
-    if (!hasAccess) throw { status: 403, message: "Forbidden" };
+    if (!hasAccess) throw { status: 401, message: "Unauthorized" };
     else return next();
   } catch (error: any) {
     return res

@@ -1,3 +1,5 @@
+import * as dotenv from "dotenv";
+dotenv.config();
 import express, { Application, Request, Response } from "express";
 import { AuthRoutes, CardRoutes } from "./app/routes";
 import { AuthGuardMiddleware } from "./app/middlewares";

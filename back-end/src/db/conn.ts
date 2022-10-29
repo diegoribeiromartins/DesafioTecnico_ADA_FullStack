@@ -1,7 +1,7 @@
 import connect, { IN_MEMORY, sql } from "@databases/sqlite";
 import * as bcrypt from "bcrypt";
-import { passwordSaltRounds } from "../config/crypt.json";
 
+const passwordSaltRounds = process.env.passwordSaltRounds as string;
 const db = connect(IN_MEMORY, { verbose: true });
 
 const initializeDatabase = async () => {
@@ -13,7 +13,7 @@ const initializeDatabase = async () => {
 
   const ADACredentials = {
     id: "letscode",
-    password: bcrypt.hash("lets@123", passwordSaltRounds),
+    password: bcrypt.hash("lets@123", +passwordSaltRounds),
   };
 
   await db.query(sql`

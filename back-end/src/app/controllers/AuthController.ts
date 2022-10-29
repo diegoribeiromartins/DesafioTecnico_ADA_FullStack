@@ -2,7 +2,8 @@ import { Request, Response } from "express";
 import UserModel from "../models/UserModel";
 import * as jwt from "jsonwebtoken";
 import { compare } from "bcrypt";
-import { JWTSecret } from "../../config/crypt.json";
+
+const JWTSecret = process.env.JWTSecret as string;
 
 class AuthController {
   async login(req: Request, res: Response) {
@@ -27,6 +28,8 @@ class AuthController {
       if (!checkPasswordIsValid) {
         throw { status: 404, message: "User not found" };
       }
+
+      console.log({ JWTSecret });
 
       return res.send({
         token: jwt.sign({ id: user.id }, JWTSecret),
