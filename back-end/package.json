@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts",
-    "build": "npx tsc",
-    "start": "rm -r dist && yarn build && yarn node dist/app.js"
+    "build": "rm -r dist && npx tsc",
+    "start": "node dist/app.js"
   },
   "devDependencies": {
     "eslint": "^8.26.0",
