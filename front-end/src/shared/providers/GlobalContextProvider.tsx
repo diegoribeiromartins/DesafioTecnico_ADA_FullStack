@@ -13,7 +13,8 @@ const GlobalContextProvider: FC<ChildrenProp> = ({ children }) => {
     <GlobalContext.Provider
       value={{
         globalLoading,
-        toggleGlobalLoading: () => setGlobalLoading(!globalLoading),
+        toggleGlobalLoading: (status = !globalLoading) =>
+          setGlobalLoading(status),
 
         user,
         setUser,

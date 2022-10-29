@@ -5,7 +5,9 @@ export interface UserEntity {
   token: string;
 }
 
-export const LoginService = async (
-  api: AxiosInstance,
-  body: Omit<UserEntity, "token">
-) => await api.post<Promise<Pick<UserEntity, "token">>>("/login", body);
+interface LoginType extends Pick<UserEntity, "password"> {
+  login: string;
+}
+
+export const LoginService = async (api: AxiosInstance, body: LoginType) =>
+  await api.post<Promise<{ token: string }>>("/login", body);

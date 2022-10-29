@@ -6,7 +6,7 @@ const useHttp = () => {
   const { user } = useContext(GlobalContext);
 
   const AxiosInstance = axios.create({
-    baseURL: import.meta.env.BASE_URl,
+    baseURL: import.meta.env.VITE_API_URL,
     headers: {
       "Content-Type": "application/json;charset=UTF-8",
       accept: "application/json",

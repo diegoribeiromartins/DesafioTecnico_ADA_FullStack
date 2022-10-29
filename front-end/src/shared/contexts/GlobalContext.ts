@@ -3,7 +3,7 @@ import { CardEntity, UserEntity } from "../../services";
 
 interface GlobalContextType {
   globalLoading: boolean;
-  toggleGlobalLoading: () => void;
+  toggleGlobalLoading: (status?: boolean) => void;
 
   user: UserEntity | null;
   setUser: (user: UserEntity) => void;
@@ -12,4 +12,6 @@ interface GlobalContextType {
   setCards: (cards: CardEntity[]) => void;
 }
 
-export const GlobalContext = createContext<Partial<GlobalContextType>>({});
+export const GlobalContext = createContext<GlobalContextType>(
+  {} as GlobalContextType
+);
