@@ -10,6 +10,7 @@ import {
 import {
   ButtonComponent,
   InputComponent,
+  MarkdownComponent,
   TextareaComponent,
 } from "../../components";
 import { useHttp } from "../../hooks";
@@ -172,7 +173,7 @@ const CardItemContainer: FC<CardItemContainerProps> = ({ card: CardData }) => {
             placeholder="Preencha o conteúdo"
           />
         ) : (
-          card.conteudo
+          <MarkdownComponent text={card.conteudo} />
         )}
       </div>
 
